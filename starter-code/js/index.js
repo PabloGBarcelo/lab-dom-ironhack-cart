@@ -2,21 +2,35 @@ function deleteItem(e){
 
 }
 
-//function getPriceByProduct(itemNode){
-function getPriceByProduct(){
-  var priceUnit = document.getElementById('price-unit');
-  updatePriceByProduct(priceUnit);
+function getPriceByProduct(itemNode){
+  var totalPrices = [];
+  var index= [];
+  var total= 0;
+  for (x = 0; x < itemNode[0].length; x++){
+    totalPrices.push([itemNode[0][x].innerHTML * itemNode[1][x].value,itemNode[2][x]]);
+  }
+    totalPrices.map(function(aTotalPrice,index){
+      updatePriceByProduct(aTotalPrice,itemNode[2][index]);
+      total += aTotalPrice[0];
+    });
+
+  updatePriceTotal(total);
 }
 
-//function updatePriceByProduct(productPrice, index){
-function updatePriceByProduct(productPrice){
-  var totalPrice = document.getElementById('total-price');
-  var quantity = document.getElementById('quantity');
-  totalPrice.innerHTML = productPrice.innerHTML * quantity.value;
+function updatePriceByProduct(productPrice, index){
+  index.innerHTML = productPrice[0];
 }
 
 function getTotalPrice() {
-  getPriceByProduct();
+  var listOfElements = [];
+  listOfElements.push(document.getElementsByClassName('price-unit'));
+  listOfElements.push(document.getElementsByClassName('qty'));
+  listOfElements.push(document.getElementsByClassName('total-price'));
+  getPriceByProduct(listOfElements);
+}
+
+function updatePriceTotal(totalPrice){
+  document.getElementById('spanFinalPrice').innerHTML = totalPrice;// = totalPrice;
 }
 
 function createQuantityInput(){

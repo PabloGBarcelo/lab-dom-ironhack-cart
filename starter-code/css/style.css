@@ -54,7 +54,8 @@ input {
 }
 
 .info{
-  text-align: center
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -68,4 +69,9 @@ input {
 
 .inline-block{
   display: inline-block;
+}
+
+.divTotal{
+  text-align: center;
+  margin-top: 20px;
 }
