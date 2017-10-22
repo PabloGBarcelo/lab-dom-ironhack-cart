@@ -78,7 +78,8 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
   var quantityBox = document.getElementsByClassName('qty');
   var autoRefreshEnabled = document.querySelector('.refreshOrNot');
-  var setCopy, buttonRefresh;
+  var setCopy = document.querySelector(".info").cloneNode(true);
+  var buttonRefresh;
   // Initial Price
   getTotalPrice();
   calculatePriceButton.onclick = getTotalPrice;
@@ -90,12 +91,16 @@ window.onload = function(){
     if (valueEmpty.value == ""){
       alert("Please, fill item product");
     }else{
-      setCopy = document.querySelector(".info").cloneNode(true);
+      if (document.querySelector(".info") != null){
+        setCopy = document.querySelector(".info").cloneNode(true);
+      }
       if (priceEmpty.value == ""){
         priceEmpty.value = 0;
       }
       createNewItem(setCopy);
       getTotalPrice();
+      valueEmpty.value = "";
+      priceEmpty.value = 0;
     }
   };
   autoRefreshEnabled.onchange = function(){
