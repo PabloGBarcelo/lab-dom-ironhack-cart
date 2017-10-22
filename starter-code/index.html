@@ -10,5 +10,43 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="title">
+    <p class="myTitle">Ironhack<br> Merchandising Shop
+  </div>
+  <div class="info flex-type">
+    <div class="listArticle inline-block flex-basis">
+      <span class="article flex-basis">
+        IronBubble-head
+      </span>
+    </div>
+    <div class="listPrice-unit inline-block flex-basis">
+      <span>$</span>
+      <span class="price-unit flex-basis" id="price-unit">
+        25.00
+      </span>
+    </div>
+    <div class="listQuantity inline-block flex-basis">
+      <span class="quantity flex-basis">
+        <label for="quantity">QTY</label>
+        <input type="text" value="0" id="quantity"></input>
+      </span>
+    </div>
+    <div class="listTotal-price inline-block flex-basis">
+      <span>$</span>
+      <span class="total-price" id="total-price">
+        0.00
+      </span>
+    </div>
+    <div class="listDelete inline-block flex-basis">
+      <span class="delete flex-basis">
+        <button class="btn-delete btn" id="btn-delete">Delete</button>
+      </span>
+    </div>
+  </div>
+  <div class="success">
+    <button class="btn-success btn" id="calc-prices-button">Calculate Price</button>
+  </div>
+</div>
+
 </body>
 </html>

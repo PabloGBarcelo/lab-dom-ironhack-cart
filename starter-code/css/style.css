@@ -39,3 +39,33 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.success {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.flex-type{
+  display: flex;
+}
+
+.flex-basis{
+  flex-basis: 20%;
+}
+
+.info{
+  text-align: center
+}
+
+.title {
+    margin-left: 45%;
+}
+
+.myTitle{
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.inline-block{
+  display: inline-block;
+}
